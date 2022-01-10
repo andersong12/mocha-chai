@@ -1,5 +1,6 @@
-import { get_all_suites } from './tests/specs/suite/suite_get.spec.js'
+import { get_all_suites, get_suite_by_id  } from './tests/specs/suite/suite_get.spec.js'
 
-context('veamos', () => {
+context('Test general', () => {
     get_all_suites()
+    get_suite_by_id()
 })
