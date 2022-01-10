@@ -1,0 +1,1 @@
+export const HOST = 'https://pakotest-api.herokuapp.com/'
