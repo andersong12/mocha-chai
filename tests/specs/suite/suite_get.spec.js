@@ -11,8 +11,8 @@ let expect = chai.expect;
 chai.use(chaiHttp);
 
 export const suite_status = () => {
-    it('status 401 requesting without session', (done) => {
-        get_and_status('https://pakotest-api.herokuapp.com/', 'suites', 201)
+    it('401 - requesting without session', (done) => {
+        get_and_status('https://pakotest-api.herokuapp.com/', 'suites', 401)
         done();
     });
 };
@@ -30,7 +30,7 @@ export const get_all_suites = () => {
             .get('suites')
             .set({ Authorization: `Bearer ${token}` })
             .end((error, res) => {
-                expect(res.status).to.equal(404); // Recommended
+                expect(res.status).to.equal(200); // Recommended
                 // expect(response.body).to.eql(users_model);
             });
         });
@@ -51,7 +51,7 @@ export const get_suite_by_id = () => {
             .get(`${HOST}/suites`)
             .set({ Authorization: `Bearer ${token}` })
             .end((error, res) => {
-                expect(res.status).to.equal(201); // Recommended
+                expect(res.status).to.equal(200); // Recommended
                 // expect(response.body).to.eql(users_model);
             });
         });
